@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="/css/index.css" type="text/css" />
 	</head>
 	<body>
-		<!--------------------------->
+		<!------------MENU------------->
 		<div id="menu">
 			<div class="bar bar1"></div>
 			<div class="bar bar2"></div>
@@ -18,10 +18,10 @@
 		<div id="arrow-menu" class="common-display"></div>
 		<div id="menu2" class="common-display">
 			<ul>
-				<li><a href="">HOME</a></li>
-				<li><a href="">INFO</a></li>
+				<li><a href="#homepage">HOME</a></li>
+				<li><a href="#informations">INFO</a></li>
 				<li><a href="">MEDIAS</a></li>
-				<li><a href="">MENU</a></li>
+				<li><a href="#carte">CARTE</a></li>
 				<li><a href="">TEAM</a></li>
 				<li class="external-link">
 					<a href="">
@@ -34,30 +34,106 @@
 				</li>
 			</ul>
 		</div>
-		<!--------------------------->
+		<!-------------HOMEPAGE-------------->
 		<section id="homepage" class="my-full-size"> <!-- u-full-width / container -->
-			<div class="row homepage-txt">
-				<div class="six columns homepage-colums">
-					<h1>
-						LOREM IPSUM
-					</h1>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-						enim ad minim veniam
-						in reprehenderit in voluptate velit esse.<br><br>
-						Cillum dolore eu fugiat
-						nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-						sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
+			<div class="container my-full-size">
+				<div class="row homepage-txt">
+					<div class="six columns homepage-colums">
+						<h4>
+							LOREM IPSUM
+						</h4>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+							enim ad minim veniam
+							in reprehenderit in voluptate velit esse.<br><br>
+							Cillum dolore eu fugiat
+							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+							sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
 				</div>
 			</div>
 		</section>
-		<!--------------------------->
-		<section class="my-full-size">
+		<!-------------INFO-------------->
+		<section id="informations" class="container"> <!-- u-full-width / container -->
+			<div class="row">
+				<h3>INFORMATIONS</h3>
+			</div>
+			<div class="row">
+				<div class="six columns">
+					<h5>INSCRIVEZ VOUS POUR CONNAITRE L'EMPLACEMENT DU PROHIBIDO</h5>
+					<p>
+						Déjà inscrit ? Utilisez le champ ci-dessous pour recevoir une nouvelle
+						fois les informations de localisation du Prohibido.<br><br>
+						Dans la mesure où des données personnelles sont prélevées, celles-ci ne sont ni vendues ni transmises à des tiers.
+					</p>
+					<form>
+						<input class="u-full-width" type="email" placeholder="E-mail*"></input>
+						<input class="button-primary" type="submit" value="envoyer"></input>
+					</form>
+				</div>
+				<div class="six columns">
+					<h5>DEMANDE DE RESERVATION OU PRIVATISATION AU PROHIBIDO</h5>
+					<form>
+						<select class="u-full-width" type="email" placeholder="--*">
+							<option value="empty">--*</option>
+							<option value="reservation">Réservation</option>
+							<option value="privatisation">Privatisation</option>
+						</select>
+						<div class="row">
+							<input class="six columns" type="email" placeholder="E-mail*"></input>
+							<input class="six columns" type="tel" placeholder="N° de téléphone*"></input>
+						</div>
+						<div class="row">
+							<input class="six columns" type="text" placeholder="Date - horaire*"></input>
+							<input class="six columns" type="text" placeholder="Nombre de personnes*"></input>
+						</div>
+						<textarea class="u-full-width" placeholder="Votre message..."></textarea>
+						<input class="button-primary" type="submit" value="envoyer"></input>
+					</form>
+				</div>
+			</div>
 		</section>
-		<!--------------------------->
-		<section></section>
+		<!--------------CARTE------------->
+		<section id="carte" class="container"> <!-- u-full-width / container -->
+			<div class="row">
+				<h3>LA CARTE PROHIBIDO</h3>
+			</div>
+			<div class="row">
+				<div class="six columns">
+					<h5>LOREM IPSUM</h5>
+					<ul>
+						<!--
+							<li><b>{- title}</b><br>&nbsp&nbsp {detail}</li>
+						-->
+						<li><b>- Sit Amet</b><br>&nbsp&nbsp Sit amet, consectetur adipiscing elit, sed do eiusmod tempor</li>
+						<li><b>- Eiusmod</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
+						<li><b>- Elit Sed</b><br>&nbsp&nbsp Onsectetur adipiscing elit, sed do.</li>
+						<li><b>- Adispiscing Elit</b><br>&nbsp&nbsp veniam, quis nostrud exercitation</li>
+						<li><b>- Eiusmod tempor</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
+						<li><b>- Tiscing Olit</b><br>&nbsp&nbsp veniam, quis nostrud exercitation</li>
+						<li><b>- Elit Sed</b><br>&nbsp&nbsp Adipiscing elit, sed do.</li>
+					</ul>
+				</div>
+				<div class="six columns">
+					<h5>EIUSMOD TEMPOR</h5>
+					<ul>
+						<li><b>- Elit Sed</b><br>&nbsp&nbsp Onsectetur adipiscing elit, sed do.</li>
+						<li><b>- Eiusmod tempor</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
+						<li><b>- Tiscing Olit</b><br>&nbsp&nbsp veniam, quis nostrud exercitation</li>
+					</ul>
+					<h5>TEMPOR TRODERTUI</h5>
+					<ul>
+						<li><b>- Eiusmod</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
+						<li><b>- Sit Amet</b><br>&nbsp&nbsp Sit amet adipiscing elit, sed do eiusmod tempor</li>
+						<li><b>- Eiusmod tempor</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
+						<li><b>- Sit Amet</b><br>&nbsp&nbsp Sit amet, consectetur adipiscing elit, sed do eiusmod tempor</li>
+						<li><b>- Tiscing Olit</b><br>&nbsp&nbsp veniam, quis nostrud exercitation</li>
+					</ul>
+				</div>
+			</div>
+		</section>
 		<!--------------------------->
 		<section></section>
 		<!--------------------------->

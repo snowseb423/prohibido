@@ -1,6 +1,26 @@
 
 body {
   margin: 0;
+  color: white;
+  background: linear-gradient(225deg, #222, #000);
+  input[type=email], input[type=number], input[type=password],
+  input[type=search], input[type=tel], input[type=text],
+  input[type=url], select, textarea {
+    border-radius: 0px;
+    border: rgba(255,255,255,0.4) solid 1px;
+    background: transparent;
+    color: white;
+    font-style: italic;
+    option {
+      background: black;
+      color: white;
+    }
+  }
+  .button-primary {
+    border-radius: 0px;
+    background-color: #947a64 !important;
+    border: 0px;
+  }
   a {
     color: white;
     text-decoration: none;
@@ -46,7 +66,7 @@ body {
   #arrow-menu {
     position: fixed;
     top: 40;
-    right: 67;
+    right: 66;
     width: 0;
     height: 0;
     border-style: solid;
@@ -74,20 +94,34 @@ body {
     }
   }
 
-  section.my-full-size {
+  h5 { font-weight: bold; }
+  h4 { font-weight: bold; }
+  h3 {
+    margin: 50 0;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .my-full-size {
     min-height: 100vh;
   }
+
   #homepage {
-    background: red;
+    background: #333;
+    h4 { color: #bb0000; }
   }
   .homepage-txt {
     position: absolute;
     bottom: 0;
-    right: 30;
   }
   .homepage-colums {
     float: right;
     text-align: right;
+  }
+
+  #carte {
+    li { list-style-type: none; }
+    h5 { color: #947a64; }
   }
 }
 
@@ -96,7 +130,6 @@ body {
     margin: 0;
     .homepage-txt {
       position: inherit;
-      padding: 0 30px;
     }
     .homepage-colums {
       text-align: left;
