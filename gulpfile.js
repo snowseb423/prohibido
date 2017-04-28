@@ -12,8 +12,6 @@ const pages = [
 
 const types = {
   less: ['./app/less/', './public/css/'], // key: [source, target]
-  html: ['./app/html/', './public/'],
-  img: ['./app/img/', './public/img/'],
   js: ['./app/js/', './public/js/']
 };
 
@@ -24,14 +22,7 @@ gulp.task('less', () => {
     .pipe(less())
     .pipe(gulp.dest(types.less[1]));
 });
-gulp.task('html', () => {
-  return gulp.src(types.html[0] + '*.html')
-    .pipe(gulp.dest(types.html[1]));
-});
-gulp.task('img', () => {
-  return gulp.src(types.html[0] + '**')
-    .pipe(gulp.dest(types.html[1]));
-});
+
 gulp.task('js', () => {
   pages.forEach( e => {
     var b = browserify({
@@ -57,16 +48,10 @@ gulp.task('clear', () =>{
 gulp.task('watch-less' , () => {
   gulp.watch(types.less[0] + '**', ['less']);
 });
-gulp.task('watch-html' , () => {
-  gulp.watch(types.html[0] + '**', ['html']);
-});
-gulp.task('watch-img' , () => {
-  gulp.watch(types.img[0] + '**', ['img']);
-});
 gulp.task('watch-js' , () => {
   gulp.watch(types.js[0] + '**', ['js']);
 });
 
-gulp.task('dev', ['watch-less', 'watch-html', 'watch-img', 'watch-js']);
-gulp.task('prod', ['less', 'html', 'img', 'js']);
+gulp.task('dev', ['watch-less', 'watch-js']);
+gulp.task('prod', ['less', 'js']);
 gulp.task('default', ['dev']);
