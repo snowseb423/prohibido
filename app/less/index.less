@@ -26,7 +26,17 @@ body {
     color: white;
     text-decoration: none;
   }
-
+  h5 { font-weight: bold; }
+  h4 { font-weight: bold; }
+  h3 {
+    margin: 0;
+    padding: 50 0;
+    text-align: center;
+    font-weight: bold;
+  }
+  .my-full-size {
+    min-height: 100vh;
+  }
   #menu {
     z-index: 1000;
     position: fixed;
@@ -79,7 +89,7 @@ body {
     right: 75;
     top: 30;
     border-right: 2px solid white;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5);
     padding: 12 30 0 30;
     ul {
       color: white;
@@ -94,46 +104,147 @@ body {
       }
     }
   }
-
-  h5 { font-weight: bold; }
-  h4 { font-weight: bold; }
-  h3 {
-    margin: 50 0;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  .my-full-size {
-    min-height: 100vh;
-  }
-
   #homepage {
-    background: #333;
-    h4 { color: #bb0000; }
+    text-shadow: 1px 1px 3px #000;
+    #main-logo-mobile { display: none; }
+    #main-logo {
+      width: 340px;
+      height: 340px;
+      left: 50%;
+      top: 50%;
+      position: absolute;
+      margin-top: -200px;
+      margin-left: -200px;
+      animation-name: mainlogo;
+      animation-fill-mode: forwards;
+      animation-duration: 600ms;
+      animation-delay: 2s;
+      @keyframes mainlogo {
+        from {
+          left: 50%;
+          top: 50%;
+          margin-top: -200px;
+          margin-left: -200px;
+          width: 340px;
+          height: 340px;
+        } to {
+          left: 20px;
+          top: 0px;
+          margin-top: -20px;
+          margin-left: -0px;
+          width: 200px;
+          height: 200px;
+        }
+      }
+      .main-logo-img { position: absolute; }
+      .red {
+        opacity: 1;
+        animation-name: red;
+        animation-fill-mode: forwards;
+        animation-duration: 600ms;
+        animation-delay: 2s;
+        @keyframes red {
+          from { opacity: 1; }
+          to { opacity: 0; }
+        }
+      }
+      .white {
+        opacity: 0;
+        animation-name: white;
+        animation-fill-mode: forwards;
+        animation-duration: 600ms;
+        animation-delay: 2s;
+        @keyframes white {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+      }
+    }
+    h4 {
+      color: #bb0000;
+      text-shadow: 1px 1px 1px #000;
+    }
+    video {
+      position: absolute;
+      object-fit: cover;
+      max-height: 100vh;
+      @media (min-aspect-ratio: 16/9) {
+        width: 100%;
+        height: auto;
+      }
+      @media (max-aspect-ratio: 16/9) {
+        width: auto;
+        height: 100%;
+      }
+    }
+    .homepage-txt {
+      position: absolute;
+      bottom: 0;
+    }
+    .homepage-colums {
+      float: right;
+      text-align: right;
+    }
   }
-  .homepage-txt {
-    position: absolute;
-    bottom: 0;
+  #medias {
+    transition-duration: 200ms;
+    img {
+      position: absolute;
+      cursor: pointer;
+    }
+    .container-medias {
+      transition-duration: 300ms;
+      .media { float: left; }
+    }
   }
-  .homepage-colums {
-    float: right;
-    text-align: right;
-  }
-
   #carte {
     li { list-style-type: none; }
     h5 { color: #947a64; }
+    padding-bottom: 50;
+  }
+  #informations {
+    padding-bottom: 50;
   }
 }
 
+@media screen and (max-device-width: 800px) {
+  body {
+    #homepage {
+      background: url(../img/pix3.png);
+      background-size: cover;
+      video { display: none; }
+      #main-logo { display: none; }
+      #main-logo-mobile {
+        display: inherit;
+        position: absolute;
+        height: 300px;
+        width: 300px;
+        left: 50%; top: 50%;
+        margin-left: -150px;
+        margin-top: -150px;
+      }
+    }
+  }
+}
 @media (max-width: 550px) {
   body {
-    margin: 0;
-    .homepage-txt {
-      position: inherit;
+    .my-full-size {
+      min-height: 0vh;
     }
-    .homepage-colums {
-      text-align: left;
+    margin: 0;
+    #homepage {
+      .homepage-txt {
+        position: inherit;
+      }
+      .homepage-colums {
+        text-align: left;
+      }
+      #main-logo-mobile {
+        position: relative;
+        margin: 0 auto;
+        left: 0;
+        top: 0;
+      }
     }
   }
 }
