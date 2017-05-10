@@ -9,7 +9,7 @@ $('#menu').on('click', e => {
 });
 
 $('a[href^="#"]').click(function(){
-	let the_id = $(this).attr("href");
+	let the_id = $(this).attr('href');
 	$('html, body').animate({
 		scrollTop:$(the_id).offset().top
 	}, 'slow');

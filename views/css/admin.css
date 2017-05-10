@@ -1,0 +1,19 @@
+body {
+  margin: 0 0;
+  padding: 0 0;
+}
+body header div {
+  width: 180px;
+  height: 180px;
+  margin: auto;
+}
+body header div img {
+  width: 100%;
+  height: 100%;
+}
+body .content {
+  padding: 10px;
+  margin: 0 0 20px 0;
+  background: #eee;
+  overflow-y: scroll;
+}

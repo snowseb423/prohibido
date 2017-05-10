@@ -1,0 +1,304 @@
+body {
+  margin: 0;
+  color: white;
+  background: linear-gradient(225deg, #222, #000);
+  overflow-x: hidden;
+}
+body input[type=email],
+body input[type=number],
+body input[type=password],
+body input[type=search],
+body input[type=tel],
+body input[type=text],
+body input[type=url],
+body select,
+body textarea {
+  border-radius: 0px;
+  border: rgba(255, 255, 255, 0.4) solid 1px;
+  background: transparent;
+  color: white;
+  font-style: italic;
+}
+body input[type=email] option,
+body input[type=number] option,
+body input[type=password] option,
+body input[type=search] option,
+body input[type=tel] option,
+body input[type=text] option,
+body input[type=url] option,
+body select option,
+body textarea option {
+  background: black;
+  color: white;
+}
+body .button-primary {
+  border-radius: 0px;
+  background-color: #947a64 !important;
+  border: 0px;
+}
+body a {
+  color: white;
+  text-decoration: none;
+}
+body h5 {
+  font-weight: bold;
+}
+body h4 {
+  font-weight: bold;
+}
+body h3 {
+  margin: 0;
+  padding: 50 0;
+  text-align: center;
+  font-weight: bold;
+}
+body .my-full-size {
+  min-height: 100vh;
+}
+body #menu {
+  z-index: 1000;
+  position: fixed;
+  top: 30;
+  right: 30;
+  width: 40;
+  height: 40;
+  overflow: hidden;
+  cursor: hand;
+}
+body #menu .bar {
+  transition-duration: 250ms;
+  position: absolute;
+  width: 24;
+  height: 2;
+  top: 19;
+  left: 8;
+  background: white;
+}
+body #menu .bar1 {
+  transform: translateY(-10px);
+}
+body #menu .bar3 {
+  transform: translateY(10px);
+}
+body #menu.clicked .bar1 {
+  transform: rotate(225deg);
+}
+body #menu.clicked .bar2 {
+  transform: translateX(34px);
+}
+body #menu.clicked .bar3 {
+  transform: rotate(-225deg);
+}
+body #arrow-menu.common-display,
+body #menu2.common-display {
+  z-index: 1000;
+  transition-duration: 250ms;
+  opacity: 0;
+  pointer-events: none;
+}
+body #arrow-menu.common-display.clicked,
+body #menu2.common-display.clicked {
+  opacity: 1;
+  pointer-events: inherit;
+}
+body #arrow-menu {
+  position: fixed;
+  top: 40;
+  right: 66;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 9px 0 9px 10px;
+  border-color: transparent transparent transparent #ffffff;
+}
+body #menu2 {
+  position: fixed;
+  right: 75;
+  top: 30;
+  border-right: 2px solid white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 12 30 0 30;
+}
+body #menu2 ul {
+  color: white;
+  list-style-type: none;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+body #menu2 ul a:hover {
+  color: #eee;
+}
+body #menu2 ul li {
+  margin-bottom: 5px;
+}
+body #menu2 ul .external-link a i {
+  font-size: x-large;
+}
+body #homepage {
+  overflow: hidden;
+  text-shadow: 1px 1px 3px #000;
+}
+body #homepage #main-logo-mobile {
+  display: none;
+}
+body #homepage #main-logo {
+  width: 340px;
+  height: 340px;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  margin-top: -200px;
+  margin-left: -200px;
+  animation-name: mainlogo;
+  animation-fill-mode: forwards;
+  animation-duration: 600ms;
+  animation-delay: 2s;
+}
+@keyframes mainlogo {
+  from {
+    left: 50%;
+    top: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+    width: 340px;
+    height: 340px;
+  }
+  to {
+    left: 20px;
+    top: 0px;
+    margin-top: -20px;
+    margin-left: 0px;
+    width: 200px;
+    height: 200px;
+  }
+}
+body #homepage #main-logo .main-logo-img {
+  position: absolute;
+}
+body #homepage #main-logo .red {
+  opacity: 1;
+  animation-name: red;
+  animation-fill-mode: forwards;
+  animation-duration: 600ms;
+  animation-delay: 2s;
+}
+@keyframes red {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+body #homepage #main-logo .white {
+  opacity: 0;
+  animation-name: white;
+  animation-fill-mode: forwards;
+  animation-duration: 600ms;
+  animation-delay: 2s;
+}
+@keyframes white {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body #homepage h4 {
+  color: #bb0000;
+  text-shadow: 1px 1px 1px #000;
+}
+body #homepage video {
+  position: absolute;
+  object-fit: cover;
+  max-height: 100vh;
+}
+@media (min-aspect-ratio: 16/9) {
+  body #homepage video {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  body #homepage video {
+    width: auto;
+    height: 100%;
+  }
+}
+body #homepage .homepage-txt {
+  position: absolute;
+  bottom: 0;
+}
+body #homepage .homepage-colums {
+  float: right;
+  text-align: right;
+}
+body #medias {
+  transition-duration: 200ms;
+}
+body #medias img {
+  position: absolute;
+  cursor: pointer;
+}
+body #medias .container-medias {
+  transition-duration: 300ms;
+}
+body #medias .container-medias .media {
+  float: left;
+}
+body #carte {
+  padding-bottom: 50;
+}
+body #carte li {
+  list-style-type: none;
+}
+body #carte h5 {
+  color: #947a64;
+}
+body #informations {
+  padding-bottom: 50;
+}
+@media screen and (max-device-width: 800px) {
+  body #homepage {
+    background: url(../img/pix3.png);
+    background-size: cover;
+  }
+  body #homepage video {
+    display: none;
+  }
+  body #homepage #main-logo {
+    display: none;
+  }
+  body #homepage #main-logo-mobile {
+    display: inherit;
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+  }
+}
+@media (max-width: 550px) {
+  body {
+    margin: 0;
+  }
+  body .my-full-size {
+    min-height: 0vh;
+  }
+  body #homepage .homepage-txt {
+    position: inherit;
+  }
+  body #homepage .homepage-colums {
+    text-align: left;
+  }
+  body #homepage #main-logo-mobile {
+    position: relative;
+    margin: 0 auto;
+    left: 0;
+    top: 0;
+  }
+}

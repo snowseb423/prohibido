@@ -7,12 +7,13 @@ var buffer = require('vinyl-buffer');
 
 const pages = [
   'index',
+  'login',
   'admin'
 ];
 
 const types = {
-  less: ['./app/less/', './public/css/'], // key: [source, target]
-  js: ['./app/js/', './public/js/']
+  less: ['./app/less/', './views/css/'], // key: [source, target]
+  js: ['./app/js/', './views/js/']
 };
 
 // <--------------------------------------->
@@ -38,10 +39,6 @@ gulp.task('js', () => {
       .pipe(gulp.dest(types.js[1]));
   });
 });
-gulp.task('clear', () =>{
-  return gulp.src('./public/', {read: false})
-    .pipe(clean());
-});
 
 // <--------------------------------------->
 
@@ -52,6 +49,6 @@ gulp.task('watch-js' , () => {
   gulp.watch(types.js[0] + '**', ['js']);
 });
 
-gulp.task('dev', ['watch-less', 'watch-js']);
-gulp.task('prod', ['less', 'js']);
+gulp.task('dev', ['less', 'js', 'watch-less', 'watch-js']);
 gulp.task('default', ['dev']);
+gulp.task('prod', ['less', 'js']);

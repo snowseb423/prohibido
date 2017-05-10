@@ -4,10 +4,15 @@
   "description": "corporate website prohibido",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "debounce": "^1.0.2",
+    "ejs": "^2.5.6",
+    "end": "^0.2.3",
+    "ent": "^2.2.0",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
     "jquery": "^3.2.1",
-    "redis": "^2.7.1",
-    "socket.io": "^1.7.3"
+    "redis": "^2.7.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
