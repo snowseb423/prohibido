@@ -17,3 +17,14 @@ body .content {
   background: #eee;
   overflow-y: scroll;
 }
+body input#logout {
+  background: rgba(230, 0, 0, 0.6);
+  border: 0;
+}
+body input#logout:hover {
+  background: rgba(230, 0, 0, 0.8);
+}
+body ul#main-content li {
+  margin: 0 0 0 10;
+  list-style: none;
+}

@@ -1,6 +1,12 @@
 import $ from 'jquery';
 // import debouce from 'debounce';
 
+var location;
+if (window.location.hostname == 'localhost')
+  location = 'http://'+ window.location.hostname + ':8080';
+else
+  location = 'http://'+ window.location.hostname;
+
 /////////MENU/////////////////////////////////
 
 $('#menu').on('click', e => {
@@ -77,4 +83,25 @@ window.addEventListener('resize', () => {
   $('#medias .container-medias').css({'width': width*length, 'height': height});
   $('#medias .container-medias .media').css({width, height});
   $('#medias .container-medias').css('margin-left', -countClickMedias * width);
+});
+
+////////AJAX////////////////////////////////////
+
+$('#submit-registration').click(() => {
+  let mail = $('#email-registration').val();
+  $.post(location +'/registration', { mail }, data => {
+    if (data === 'done') {
+      $('#email-registration').css('border', 'rgba(255,255,255,0.4) solid 1px');
+      $('#email-registration, #submit-registration').css({'opacity': '0', 'pointer-events': 'none'});
+      $('#replace-registration').css({'opacity': '1', 'pointer-events': 'inherit'});
+      setTimeout(() => {
+        $('#email-registration, #submit-registration').css({'opacity': '1', 'pointer-events': 'inherit'});
+        $('#replace-registration').css({'opacity': '0', 'pointer-events': 'none'});
+      }, 7000);
+    } else if (data === 'false') {
+      $('#email-registration').css('border', '1.5px solid red');
+      $('#email-registration').val('');
+      $('#email-registration').attr('placeholder', 'Veuillez saisir une adresse valide');
+    }
+  });
 });

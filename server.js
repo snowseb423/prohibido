@@ -1,12 +1,14 @@
-var express	=	require('express');
-var	session	=	require('express-session');
-var app	=	express();
-app.listen(8080);
-var	bodyParser = require('body-parser');
-var redis = require('redis');
-var client = redis.createClient();
+const express	=	require('express');
+const	session	=	require('express-session');
+const	bodyParser = require('body-parser');
+const redis = require('redis');
+const validator = require('email-validator');
 
-app.use(function(req, res, next) {
+const client = redis.createClient();
+const app	=	express();
+app.listen(8080);
+
+app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
 	res.header('Access-Control-Allow-Headers', 'Content-Type');
@@ -22,17 +24,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-var sess;
-app.get('/', function (req, res) {
+var sess = '';
+app.get('/', (req, res) => {
   res.render('index.html');
 });
-app.get('/login', function (req, res) {
+app.get('/login', (req, res) => {
 	if (sess.user && sess.code)
 		res.redirect('/admin');
 	else
 		res.render('login.html');
 });
-app.post('/temp',function(req, res) {
+app.post('/temp', (req, res) => {
 	sess = req.session;
 	client.hgetall('session', (err, result) => {
 		if (result.user == req.body.user && result.code == req.body.code) {
@@ -43,10 +45,33 @@ app.post('/temp',function(req, res) {
 			res.end('false');
 	});
 });
-app.get('/admin',function(req,res){
+app.get('/admin', (req, res) => {
 	sess = req.session;
 	if (sess.user && sess.code)
 		res.render('admin.html');
 	else
 		res.redirect('/login');
+});
+app.get('/logout',(req, res) => {
+	req.session.destroy( err => {
+		if(err)
+			console.log(err);
+		else
+			res.redirect('/login');
+	});
+});
+app.post('/registration', (req, res) => {
+	let mail = req.body.mail;
+	if (validator.validate(mail)) {
+		client.lrange('mails', 0, -1, (err, result) => {
+			if (result.indexOf(mail) == -1)
+				client.lpush('mails', mail);
+		});
+		res.end('done');
+	} else {
+		res.end('false');
+	}
+});
+app.post('/users', (req, res) => {
+	client.lrange('mails', 0, -1, (err, result) => { res.end(JSON.stringify(result)); });
 });

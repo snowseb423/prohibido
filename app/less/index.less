@@ -2,7 +2,7 @@
 body {
   margin: 0;
   color: white;
-  background: linear-gradient(225deg, #222, #000);
+  background: linear-gradient(225deg, #111, #000);
   overflow-x: hidden;
   input[type=email], input[type=number], input[type=password],
   input[type=search], input[type=tel], input[type=text],
@@ -21,6 +21,9 @@ body {
     border-radius: 0px;
     background-color: #947a64 !important;
     border: 0px;
+    &:hover {
+
+    }
   }
   a {
     color: white;
@@ -205,6 +208,21 @@ body {
   }
   #informations {
     padding-bottom: 50;
+    form { transition-duration: 200ms; }
+    transition-duration: 200ms;
+    .replace {
+      transition-duration: 200ms;
+      opacity: 0;
+      pointer-events: none;
+      margin-top: -110px;
+      display: flex;
+      div { padding: 10px; }
+      i {
+        font-size: xx-large;
+        padding-top: 50%;
+        color: rgb(0, 150, 0);
+      }
+    }
   }
 }
 

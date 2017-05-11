@@ -1,7 +1,7 @@
 body {
   margin: 0;
   color: white;
-  background: linear-gradient(225deg, #222, #000);
+  background: linear-gradient(225deg, #111, #000);
   overflow-x: hidden;
 }
 body input[type=email],
@@ -259,6 +259,25 @@ body #carte h5 {
 }
 body #informations {
   padding-bottom: 50;
+  transition-duration: 200ms;
+}
+body #informations form {
+  transition-duration: 200ms;
+}
+body #informations .replace {
+  transition-duration: 200ms;
+  opacity: 0;
+  pointer-events: none;
+  margin-top: -110px;
+  display: flex;
+}
+body #informations .replace div {
+  padding: 10px;
+}
+body #informations .replace i {
+  font-size: xx-large;
+  padding-top: 50%;
+  color: #009600;
 }
 @media screen and (max-device-width: 800px) {
   body #homepage {
