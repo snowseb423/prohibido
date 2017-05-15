@@ -2,10 +2,12 @@ const express	=	require('express');
 const	session	=	require('express-session');
 const	bodyParser = require('body-parser');
 const redis = require('redis');
+const client = redis.createClient();
 const validator = require('email-validator');
 
-const client = redis.createClient();
-const app	=	express();
+////////////CONFSERVER//////////////////////////
+
+var app	=	express();
 app.listen(8080);
 
 app.use((req, res, next) => {
@@ -23,6 +25,7 @@ app.use(express.static('views'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+////////////////ROAD/////////////////////////
 
 var sess = '';
 app.get('/', (req, res) => {
@@ -71,6 +74,11 @@ app.post('/registration', (req, res) => {
 	} else {
 		res.end('false');
 	}
+});
+app.post('/sendmail', (req, res) => {
+	let mail = req.body;
+	console.log(mail);
+	res.end('done');
 });
 app.post('/users', (req, res) => {
 	client.lrange('mails', 0, -1, (err, result) => { res.end(JSON.stringify(result)); });

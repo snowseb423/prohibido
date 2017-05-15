@@ -68,50 +68,62 @@
 			</div>
 		</section>
 		<!-------------INFO-------------->
-		<section id="informations" class="container"> <!-- u-full-width / container -->
-			<div class="row">
-				<h3 style="white-space:nowrap;">INFORMATIONS</h3>
-			</div>
-			<div class="row">
-				<div class="six columns">
-					<h5>INSCRIVEZ VOUS POUR CONNAITRE L'EMPLACEMENT DU PROHIBIDO</h5>
-					<p>
-						Déjà inscrit ? Utilisez le champ ci-dessous pour recevoir une nouvelle
-						fois les informations de localisation du Prohibido.<br><br>
-						Dans la mesure où des données personnelles sont prélevées, celles-ci ne sont ni vendues ni transmises à des tiers.
-					</p>
-					<form id="form-email-registration">
-						<input id="email-registration" class="u-full-width" type="email" placeholder="E-mail*"></input>
-						<input id="submit-registration" class="button-primary" type="button" value="envoyer"></input>
-						<div id="replace-registration" class="replace">
-							<div>
-								<i class="fa fa-check-circle" aria-hidden="true"></i>
-							</div>
-							<div>
-								Nous venons de vous envoyer les informations du prohibido par mail et elles sont maintenant visible sur notre site.
-							</div>
-						</div>
-					</form>
+		<section id="informations"> <!-- u-full-width / container -->
+			<div class="container">
+				<div class="row">
+					<h3 style="white-space:nowrap;">INFORMATIONS</h3>
 				</div>
-				<div class="six columns">
-					<h5>DEMANDE DE RESERVATION OU PRIVATISATION AU PROHIBIDO</h5>
-					<form>
-						<select class="u-full-width" type="email" placeholder="--*">
-							<option value="empty">--*</option>
-							<option value="reservation">Réservation</option>
-							<option value="privatisation">Privatisation</option>
-						</select>
-						<div class="row">
-							<input class="six columns" type="email" placeholder="E-mail*"></input>
-							<input class="six columns" type="tel" placeholder="N° de téléphone*"></input>
-						</div>
-						<div class="row">
-							<input class="six columns" type="text" placeholder="Date - horaire*"></input>
-							<input class="six columns" type="text" placeholder="Nombre de personnes*"></input>
-						</div>
-						<textarea class="u-full-width" placeholder="Votre message..."></textarea>
-						<input class="button-primary" type="submit" value="envoyer"></input>
-					</form>
+				<div class="row">
+					<div class="six columns">
+						<h5>INSCRIVEZ VOUS POUR CONNAITRE L'EMPLACEMENT DU PROHIBIDO</h5>
+						<p>
+							Déjà inscrit ? Utilisez le champ ci-dessous pour recevoir une nouvelle
+							fois les informations de localisation du Prohibido.<br><br>
+							Dans la mesure où des données personnelles sont prélevées, celles-ci ne sont ni vendues ni transmises à des tiers.
+						</p>
+						<form id="form-email-registration">
+							<input id="email-registration" class="u-full-width" type="email" placeholder="E-mail*"></input>
+							<input id="submit-registration" class="button-primary" type="button" value="envoyer"></input>
+							<div id="replace-registration" class="replace">
+								<div>
+									<i class="fa fa-check-circle" aria-hidden="true"></i>
+								</div>
+								<div>
+									Nous venons de vous envoyer les informations du prohibido par mail et elles sont maintenant visible sur notre site.
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="six columns">
+						<h5>DEMANDE DE RESERVATION OU PRIVATISATION AU PROHIBIDO</h5>
+						<form>
+							<div id="form-sendmail">
+								<select id="select-sendmail" class="u-full-width" type="email">
+									<option value="empty">--*</option>
+									<option value="reservation">Réservation</option>
+									<option value="privatisation">Privatisation</option>
+								</select>
+								<div class="row">
+									<input id="email-sendmail" class="six columns" type="email" placeholder="E-mail*"></input>
+									<input id="number-sendmail" class="six columns" type="tel" placeholder="N° de téléphone*"></input>
+								</div>
+								<div class="row">
+									<input id="date-sendmail" class="six columns" type="text" placeholder="Date - horaire*"></input>
+									<input id="peoples-sendmail" class="six columns" type="text" placeholder="Nombre de personnes*"></input>
+								</div>
+								<textarea id="txt-sendmail" class="u-full-width" placeholder="Votre message..."></textarea>
+								<input id="submit-sendmail" class="button-primary" type="button" value="envoyer"></input>
+							</div>
+							<div id="replace-sendmail" class="replace">
+								<div>
+									<i class="fa fa-check-circle" aria-hidden="true"></i>
+								</div>
+								<div>
+									Nous venons de vous envoyer les informations du prohibido par mail et elles sont maintenant visible sur notre site.
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -129,46 +141,48 @@
 			</div>
 		</section>
 		<!--------------CARTE------------->
-		<section id="carte" class="container"> <!-- u-full-width / container -->
-			<div class="row">
-				<h3>LA CARTE PROHIBIDO</h3>
-			</div>
-			<div class="row">
-				<div class="six columns">
-					<h5>LOREM IPSUM</h5>
-					<ul>
-						<!--<li><b>{- title}</b><br>&nbsp&nbsp {detail}</li>-->
-						<li><b>- Sit Amet</b><br>&nbsp&nbsp Sit amet, consectetur adipiscing elit, sed do eiusmod tempor</li>
-						<li><b>- Eiusmod</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
-						<li><b>- Elit Sed</b><br>&nbsp&nbsp Onsectetur adipiscing elit, sed do.</li>
-						<li><b>- Adispiscing Elit</b><br>&nbsp&nbsp veniam, quis nostrud exercitation</li>
-						<li><b>- Eiusmod tempor</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
-						<li><b>- Tiscing Olit</b><br>&nbsp&nbsp veniam, quis nostrud exercitation</li>
-						<li><b>- Elit Sed</b><br>&nbsp&nbsp Adipiscing elit, sed do.</li>
-					</ul>
+		<section id="carte"> <!-- u-full-width / container -->
+			<div class="container">
+				<div class="row">
+					<h3>LA CARTE PROHIBIDO</h3>
 				</div>
-				<div class="six columns">
-					<h5>EIUSMOD TEMPOR TRUBU</h5>
-					<ul>
-						<li><b>- Elit Sed</b><br>&nbsp&nbsp Onsectetur adipiscing elit, sed do Incididunt labore</li>
-						<li><b>- Eiusmod tempor</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
-						<li><b>- Tiscing Olit</b><br>&nbsp&nbsp veniam, quis nostrud exercitation</li>
-					</ul>
-					<h5>TEMPOR TRODERTUI</h5>
-					<ul>
-						<li><b>- Eiusmod</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
-						<li><b>- Sit Amet</b><br>&nbsp&nbsp Sit amet adipiscing elit, sed do eiusmod tempor</li>
-						<li><b>- Eiusmod tempor</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
-						<li><b>- Sit Amet</b><br>&nbsp&nbsp Sit amet, consectetur adipiscing elit, sed do eiusmod tempor</li>
-						<li><b>- Tiscing Olit</b><br>&nbsp&nbsp veniam, quis nostrud exercitation</li>
-					</ul>
+				<div class="row">
+					<div class="six columns">
+						<h5>LOREM IPSUM</h5>
+						<ul>
+							<!--<li><b>{- title}</b><br>&nbsp&nbsp {detail}</li>-->
+							<li><b>- Sit Amet</b><br>&nbsp&nbsp Sit amet, consectetur adipiscing elit, sed do eiusmod tempor</li>
+							<li><b>- Eiusmod</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
+							<li><b>- Elit Sed</b><br>&nbsp&nbsp Onsectetur adipiscing elit, sed do.</li>
+							<li><b>- Adispiscing Elit</b><br>&nbsp&nbsp veniam, quis nostrud exercitation</li>
+							<li><b>- Eiusmod tempor</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
+							<li><b>- Tiscing Olit</b><br>&nbsp&nbsp veniam, quis nostrud exercitation</li>
+							<li><b>- Elit Sed</b><br>&nbsp&nbsp Adipiscing elit, sed do.</li>
+						</ul>
+					</div>
+					<div class="six columns">
+						<h5>EIUSMOD TEMPOR TRUBU</h5>
+						<ul>
+							<li><b>- Elit Sed</b><br>&nbsp&nbsp Onsectetur adipiscing elit, sed do Incididunt labore</li>
+							<li><b>- Eiusmod tempor</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
+							<li><b>- Tiscing Olit</b><br>&nbsp&nbsp veniam, quis nostrud exercitation</li>
+						</ul>
+						<h5>TEMPOR TRODERTUI</h5>
+						<ul>
+							<li><b>- Eiusmod</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
+							<li><b>- Sit Amet</b><br>&nbsp&nbsp Sit amet adipiscing elit, sed do eiusmod tempor</li>
+							<li><b>- Eiusmod tempor</b><br>&nbsp&nbsp Incididunt ut labore et dolor magna...</li>
+							<li><b>- Sit Amet</b><br>&nbsp&nbsp Sit amet, consectetur adipiscing elit, sed do eiusmod tempor</li>
+							<li><b>- Tiscing Olit</b><br>&nbsp&nbsp veniam, quis nostrud exercitation</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</section>
 		<!----------------TEAM--------------->
 		<section id="team" style="background: url(img/team.jpg); background-size: cover">
 			<div class="row">
-				<h3>TEAM</h3>
+				<!-- <h3>TEAM</h3> -->
 			</div>
 		</section>
 		<!---------------FOOTER-------------->

@@ -97,6 +97,8 @@ $('#submit-registration').click(() => {
       setTimeout(() => {
         $('#email-registration, #submit-registration').css({'opacity': '1', 'pointer-events': 'inherit'});
         $('#replace-registration').css({'opacity': '0', 'pointer-events': 'none'});
+        $('#email-registration').val('');
+        $('#email-registration').attr('placeholder', 'E-mail*');
       }, 7000);
     } else if (data === 'false') {
       $('#email-registration').css('border', '1.5px solid red');
@@ -104,4 +106,53 @@ $('#submit-registration').click(() => {
       $('#email-registration').attr('placeholder', 'Veuillez saisir une adresse valide');
     }
   });
+});
+
+$('#submit-sendmail').click(() => {
+  if($('#select-sendmail').val() == 'empty')
+    $('#select-sendmail').css('border', '1.5px solid red');
+  else
+    $('#select-sendmail').css('border', 'rgba(255,255,255,0.4) solid 1px');
+  const elements = [
+    $('#email-sendmail'),
+    $('#number-sendmail'),
+    $('#date-sendmail'),
+    $('#peoples-sendmail')
+  ];
+  elements.forEach(e => {
+    if (!e.val())
+      e.css({border: '1.5px solid red'});
+    else
+      e.css({border: 'rgba(255,255,255,0.4) solid 1px'});
+  });
+  if (
+    $('#select-sendmail').val() != 'empty' &&
+    $('#email-sendmail').val() &&
+    $('#number-sendmail').val() &&
+    $('#date-sendmail').val() &&
+    $('#peoples-sendmail').val()
+  ) {
+    let mail = {
+      objet : $('#select-sendmail').val(),
+      email : $('#email-sendmail').val(),
+      tel : $('#number-sendmail').val(),
+      date : $('#date-sendmail').val(),
+      nombre : $('#peoples-sendmail').val(),
+      message : $('#txt-sendmail').val()
+    };
+    $.post(location +'/sendmail', mail, data => {
+      if (data === 'done') {
+        $('#form-sendmail').css({'opacity': '0', 'pointer-events': 'none'});
+        $('#replace-sendmail').css({'opacity': '1', 'pointer-events': 'inherit'});
+        setTimeout(() => {
+          $('#form-sendmail').css({'opacity': '1', 'pointer-events': 'inherit'});
+          $('#replace-sendmail').css({'opacity': '0', 'pointer-events': 'none'});
+          $('#txt-sendmail').val('');
+          elements.forEach(e => {
+            e.val('');
+          });
+        }, 7000);
+      }
+    });
+  }
 });

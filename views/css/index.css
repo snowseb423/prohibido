@@ -1,8 +1,8 @@
 body {
   margin: 0;
   color: white;
-  background: linear-gradient(225deg, #111, #000);
   overflow-x: hidden;
+  background: black;
 }
 body input[type=email],
 body input[type=number],
@@ -32,9 +32,13 @@ body textarea option {
   color: white;
 }
 body .button-primary {
-  border-radius: 0px;
+  border-radius: 2px;
   background-color: #947a64 !important;
-  border: 0px;
+  border: 0;
+  border-bottom: #b7a18f 3px solid !important;
+}
+body .button-primary:hover {
+  border: 0 0;
 }
 body a {
   color: white;
@@ -48,7 +52,7 @@ body h4 {
 }
 body h3 {
   margin: 0;
-  padding: 50 0;
+  padding: 75 0;
   text-align: center;
   font-weight: bold;
 }
@@ -249,7 +253,8 @@ body #medias .container-medias .media {
   float: left;
 }
 body #carte {
-  padding-bottom: 50;
+  padding-bottom: 100;
+  background: black;
 }
 body #carte li {
   list-style-type: none;
@@ -258,7 +263,8 @@ body #carte h5 {
   color: #947a64;
 }
 body #informations {
-  padding-bottom: 50;
+  padding-bottom: 100;
+  background: black;
   transition-duration: 200ms;
 }
 body #informations form {
@@ -266,10 +272,10 @@ body #informations form {
 }
 body #informations .replace {
   transition-duration: 200ms;
-  opacity: 0;
-  pointer-events: none;
   margin-top: -110px;
   display: flex;
+  opacity: 0;
+  pointer-events: none;
 }
 body #informations .replace div {
   padding: 10px;
