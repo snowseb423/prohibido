@@ -31,6 +31,9 @@ var sess = '';
 app.get('/', (req, res) => {
   res.render('index.html');
 });
+app.get('/en', (req, res) => {
+  res.render('en.html');
+});
 app.get('/login', (req, res) => {
 	if (sess.user && sess.code)
 		res.redirect('/admin');
