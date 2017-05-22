@@ -130,6 +130,7 @@ $('#submit-registration').click(() => {
         el.style.backgroundImage = 'url(img/layer.svg)';
         el.style.width = marker.properties.iconSize[0] + 'px';
         el.style.height = marker.properties.iconSize[1] + 'px';
+        el.style.margin = '-30 0 0 0';
         el.addEventListener('click', function() {
             window.alert('yolo');
         });
