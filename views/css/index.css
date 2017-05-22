@@ -212,7 +212,7 @@ body #homepage #main-logo .white {
   }
 }
 body #homepage h4 {
-  color: #bb0000;
+  color: #947a64;
   text-shadow: 1px 1px 1px #000;
 }
 body #homepage video {
@@ -293,15 +293,18 @@ body #map-container {
   overflow: hidden;
 }
 body #map-container #arrow-map {
-  transition-duration: 200ms;
+  transition-duration: 300ms;
   position: absolute;
   background: #8c7669;
   transform: rotateZ(45deg);
   width: 50px;
   height: 50px;
   margin-top: 0px;
-  display: none;
+  opacity: 0;
   margin-left: 25%;
+}
+body #map-container .mapboxgl-ctrl-attrib {
+  display: none;
 }
 body #map-container #password-map {
   transition-duration: 700ms;

@@ -94,10 +94,9 @@ $('#submit-registration').click(() => {
       $('#email-registration').css('border', 'rgba(255,255,255,0.4) solid 1px');
       $('#email-registration, #submit-registration').css({'opacity': '0', 'pointer-events': 'none'});
       $('#replace-registration').css({'opacity': '1', 'pointer-events': 'inherit'});
-      var widthMap = Math.round(window.innerHeight  );
+      var widthMap = Math.round((window.innerHeight / 100)*70 );
       $('#map-container').css('height', widthMap);
       $('#map').css('height', widthMap);
-      $('#arrow-map').css({display: 'inherit', 'margin-top': '-25px'});
       $('#password-map div p').html('mot de passe : 5B6GHB');
 
       mapboxgl.accessToken = 'pk.eyJ1IjoicHJvaGliaWRvIiwiYSI6ImNqMmxscjczODAwMHQyd283eGI1MTdtN3oifQ.mgVTX3Bp6O61PVWpiFMNBQ';
@@ -109,12 +108,14 @@ $('#submit-registration').click(() => {
       });
 
       var geojson = {
+        'id': 'marker',
         'type': 'FeatureCollection',
         'features': [
           {
             'type': 'Feature',
             'properties': {
-              'iconSize': [50, 60]
+              'iconSize': [50, 60],
+              'description': 'test'
             },
             'geometry': {
               'type': 'Point',
@@ -124,25 +125,23 @@ $('#submit-registration').click(() => {
         ]
       };
 
-      geojson.features.forEach(function(marker) {
+      geojson.features.forEach((marker) => {
         var el = document.createElement('div');
         el.className = 'marker';
         el.style.backgroundImage = 'url(img/layer.svg)';
         el.style.width = marker.properties.iconSize[0] + 'px';
         el.style.height = marker.properties.iconSize[1] + 'px';
         el.style.margin = '-30 0 0 0';
-        el.addEventListener('click', function() {
-            window.alert('yolo');
-        });
         new mapboxgl.Marker(el, {offset: [-marker.properties.iconSize[0] / 2, -marker.properties.iconSize[1] / 2]})
           .setLngLat(marker.geometry.coordinates)
           .addTo(map);
       });
 
       setTimeout(() => {
-        $('html, body').animate({scrollTop: $('#map').offset().top}, 500 );
+        $('#arrow-map').css({'opacity': '1', 'margin-top': '-25px'});
+        $('html, body').animate({scrollTop: $('#map').offset().top - Math.round((window.innerHeight / 100)*15 )}, 500 );
         $('#password-map').css('transform', 'translateY(-100px)');
-      }, 2300);
+      }, 1000);
       setTimeout(() => {
         $('#email-registration, #submit-registration').css({'opacity': '1', 'pointer-events': 'inherit'});
         $('#replace-registration').css({'opacity': '0', 'pointer-events': 'none'});

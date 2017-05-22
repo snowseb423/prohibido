@@ -167,7 +167,7 @@ body {
       }
     }
     h4 {
-      color: #bb0000;
+      color: #947a64;
       text-shadow: 1px 1px 1px #000;
     }
     video {
@@ -234,15 +234,18 @@ body {
     height: 0vh;
     overflow: hidden;
     #arrow-map {
-      transition-duration: 200ms;
+      transition-duration: 300ms;
       position: absolute;
       background: rgb(140, 118, 105);
       transform: rotateZ(45deg);
       width: 50px;
       height: 50px;
-      margin-top: 0px; // -25px
-      display: none; // inherit
+      margin-top: 0px;
+      opacity: 0;
       margin-left: 25%;
+    }
+    .mapboxgl-ctrl-attrib {
+      display: none;
     }
     #password-map {
       transition-duration: 700ms;
