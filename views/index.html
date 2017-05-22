@@ -2,14 +2,16 @@
 	<head>
 		<title>Prohibido</title>
 		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" type="text/css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"/>
 		<link rel="stylesheet" href="/css/index.css" type="text/css" />
 	</head>
 	<body>
-		<!------------MENU------------->
+		<!--MENU------------->
 		<div id="menu">
 			<div class="bar bar1"></div>
 			<div class="bar bar2"></div>
@@ -34,7 +36,7 @@
 				</li>
 			</ul>
 		</div>
-		<!-------------HOMEPAGE-------------->
+		<!--HOMEPAGE-------------->
 		<section id="homepage" class="my-full-size"> <!-- u-full-width / container -->
 			<video width="100%" height="100%" playsinline="true" autoplay="true" muted="true" loop="true" poster="img/pix3.png" id="bgvid">
 		    <source src="img/video.mp4" type="video/mp4">
@@ -67,7 +69,7 @@
 				</div>
 			</div>
 		</section>
-		<!-------------INFO-------------->
+		<!--INFO-------------->
 		<section id="informations"> <!-- u-full-width / container -->
 			<div class="container">
 				<div class="row">
@@ -127,7 +129,17 @@
 				</div>
 			</div>
 		</section>
-		<!-------------MEDIAS-------------->
+		<!--MAP----------------->
+		<section id="map-container">
+			<div id="arrow-map"></div>
+			<div id='map' style='width: 100%;'></div>
+			<div class="row" id="password-map">
+				<img class="password-map" src="img/negative-arrow-left.png" height="44px" width="12px"/>
+				<div><p></p></div>
+				<img class="password-map" src="img/negative-arrow-right.png" height="44px" width="12px"/>
+			</div>
+		</section>
+		<!--MEDIAS-------------->
 		<section id="medias">
 			<img src="img/arrow.png" class="left-button" width="50px" height="50px"/>
 			<img src="img/arrow.png" class="right-button" width="50px" height="50px"/>
@@ -140,7 +152,7 @@
 				<div class="media" style="background: url(img/pix3.png); background-size: cover;"></div>
 			</div>
 		</section>
-		<!--------------CARTE------------->
+		<!--CARTE------------->
 		<section id="carte"> <!-- u-full-width / container -->
 			<div class="container">
 				<div class="row">
@@ -179,13 +191,13 @@
 				</div>
 			</div>
 		</section>
-		<!----------------TEAM--------------->
+		<!--TEAM--------------->
 		<section id="team" style="background: url(img/team.jpg); background-size: cover">
 			<div class="row">
 				<!-- <h3>TEAM</h3> -->
 			</div>
 		</section>
-		<!---------------FOOTER-------------->
+		<!--FOOTER-------------->
 		<section id="footer" style="height: 200px">
 			<div style="height: 200px; width: 200px; margin: -90px auto 0 auto;">
 				<img src="img/logo_white_500x500.png" width="100%" height="100%"/>

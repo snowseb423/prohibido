@@ -4,7 +4,7 @@ import copy from 'copy-to-clipboard';
 $(document).ready(() => {
 
   var location;
-  if (window.location.hostname == 'localhost')
+  if (window.location.hostname == 'localhost' || window.location.hostname == 'ubuntu')
     location = 'http://'+ window.location.hostname + ':8080';
   else
     location = 'http://'+ window.location.hostname;

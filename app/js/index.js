@@ -2,7 +2,7 @@ import $ from 'jquery';
 // import debouce from 'debounce';
 
 var location;
-if (window.location.hostname == 'localhost')
+if (window.location.hostname == 'localhost' || window.location.hostname == 'ubuntu')
   location = 'http://'+ window.location.hostname + ':8080';
 else
   location = 'http://'+ window.location.hostname;
@@ -94,6 +94,54 @@ $('#submit-registration').click(() => {
       $('#email-registration').css('border', 'rgba(255,255,255,0.4) solid 1px');
       $('#email-registration, #submit-registration').css({'opacity': '0', 'pointer-events': 'none'});
       $('#replace-registration').css({'opacity': '1', 'pointer-events': 'inherit'});
+      var widthMap = Math.round(window.innerHeight  );
+      $('#map-container').css('height', widthMap);
+      $('#map').css('height', widthMap);
+      $('#arrow-map').css({display: 'inherit', 'margin-top': '-25px'});
+      $('#password-map div p').html('mot de passe : 5B6GHB');
+
+      mapboxgl.accessToken = 'pk.eyJ1IjoicHJvaGliaWRvIiwiYSI6ImNqMmxscjczODAwMHQyd283eGI1MTdtN3oifQ.mgVTX3Bp6O61PVWpiFMNBQ';
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/prohibido/cj2pyocwz004w2smti3wedsme',
+        center: [-1.473, 43.489],
+        zoom: 14
+      });
+
+      var geojson = {
+        'type': 'FeatureCollection',
+        'features': [
+          {
+            'type': 'Feature',
+            'properties': {
+              'iconSize': [50, 60]
+            },
+            'geometry': {
+              'type': 'Point',
+              'coordinates': [ -1.473903, 43.489183 ]
+            }
+          }
+        ]
+      };
+
+      geojson.features.forEach(function(marker) {
+        var el = document.createElement('div');
+        el.className = 'marker';
+        el.style.backgroundImage = 'url(img/layer.svg)';
+        el.style.width = marker.properties.iconSize[0] + 'px';
+        el.style.height = marker.properties.iconSize[1] + 'px';
+        el.addEventListener('click', function() {
+            window.alert('yolo');
+        });
+        new mapboxgl.Marker(el, {offset: [-marker.properties.iconSize[0] / 2, -marker.properties.iconSize[1] / 2]})
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+      });
+
+      setTimeout(() => {
+        $('html, body').animate({scrollTop: $('#map').offset().top}, 500 );
+        $('#password-map').css('transform', 'translateY(-100px)');
+      }, 2300);
       setTimeout(() => {
         $('#email-registration, #submit-registration').css({'opacity': '1', 'pointer-events': 'inherit'});
         $('#replace-registration').css({'opacity': '0', 'pointer-events': 'none'});

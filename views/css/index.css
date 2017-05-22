@@ -38,7 +38,8 @@ body .button-primary {
   border-bottom: #b7a18f 3px solid !important;
 }
 body .button-primary:hover {
-  border: 0 0;
+  border-bottom: #b7a18f 0px solid !important;
+  border-top: #6f5c4c 1.5px solid !important;
 }
 body a {
   color: white;
@@ -284,6 +285,41 @@ body #informations .replace i {
   font-size: xx-large;
   padding-top: 50%;
   color: #009600;
+}
+body #map-container {
+  transition-duration: 700ms;
+  background: #8c7669;
+  height: 0vh;
+  overflow: hidden;
+}
+body #map-container #arrow-map {
+  transition-duration: 200ms;
+  position: absolute;
+  background: #8c7669;
+  transform: rotateZ(45deg);
+  width: 50px;
+  height: 50px;
+  margin-top: 0px;
+  display: none;
+  margin-left: 25%;
+}
+body #map-container #password-map {
+  transition-duration: 700ms;
+  margin-top: -400px;
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  padding: 0 10px;
+}
+body #map-container #password-map div {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+body #map-container #password-map div p {
+  margin: 5px 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
 }
 @media screen and (max-device-width: 800px) {
   body #homepage {
