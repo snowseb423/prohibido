@@ -68,6 +68,13 @@ $('#medias img.left-button').css({
   'display': countClickMedias == 0 ? 'none' : 'inherit'
 });
 
+/////////PARALLAX///////////////////////////////
+
+window.addEventListener('scroll', () => {
+  let scroll = $(document).scrollTop();
+  $('video#bgvid').css({top: scroll/2});
+}, true);
+
 /////////RESIZE///////////////////////////////
 
 window.addEventListener('resize', () => {
