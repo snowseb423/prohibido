@@ -68,6 +68,22 @@ $('#medias img.left-button').css({
   'display': countClickMedias == 0 ? 'none' : 'inherit'
 });
 
+/////////H3///////////////////////////////
+
+const h3Ornements = () => {
+  const h3s = [
+    '#h3-information',
+    '#h3-carte',
+    '#h3-medias'
+  ];
+  h3s.forEach( e => {
+    $(e).css({
+      'margin-left': ( width - $(e + ' .container-h3-ornement').width()) / 2
+    });
+  });
+};
+h3Ornements();
+
 /////////PARALLAX///////////////////////////////
 
 window.addEventListener('scroll', () => {
@@ -78,6 +94,7 @@ window.addEventListener('scroll', () => {
 /////////RESIZE///////////////////////////////
 
 window.addEventListener('resize', () => {
+  h3Ornements();
   width = $(window).width();
   height = (width/16)*9;
   $('#team').css({ width, height: width/2});

@@ -57,6 +57,15 @@ body h3 {
   text-align: center;
   font-weight: bold;
 }
+body h3.h3-ornement {
+  display: flex;
+}
+body h3.h3-ornement .container-h3-ornement {
+  display: flex;
+}
+body h3.h3-ornement span {
+  float: left;
+}
 body .my-full-size {
   min-height: 100vh;
 }
@@ -238,7 +247,7 @@ body #homepage .homepage-colums {
 body #medias {
   transition-duration: 200ms;
 }
-body #medias img {
+body #medias .arrow-slider {
   position: absolute;
   cursor: pointer;
 }
