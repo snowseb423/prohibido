@@ -247,7 +247,7 @@ body #homepage .homepage-colums {
 body #medias {
   transition-duration: 200ms;
 }
-body #medias .arrow-slider {
+body #medias img {
   position: absolute;
   cursor: pointer;
 }
@@ -356,6 +356,9 @@ body #map-container #password-map div p {
   }
   body .my-full-size {
     min-height: 0vh;
+  }
+  body #h3-team {
+    display: none;
   }
   body #homepage .homepage-txt {
     position: inherit;

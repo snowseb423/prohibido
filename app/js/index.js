@@ -74,7 +74,7 @@ const h3Ornements = () => {
   const h3s = [
     '#h3-information',
     '#h3-carte',
-    '#h3-medias'
+    '#h3-team'
   ];
   h3s.forEach( e => {
     $(e).css({
