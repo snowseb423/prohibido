@@ -37,5 +37,5 @@ jspm_packages
 .node_repl_history
 
 # build files
-public/css/**
-public/js/**
+views/css/
+views/js/
