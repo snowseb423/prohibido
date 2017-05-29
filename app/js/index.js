@@ -14,6 +14,8 @@ $('#menu').on('click', e => {
   e.preventDefault();
 });
 
+/////////SMOOTHSCROLL//////////////////////////
+
 $('a[href^="#"]').click(function(){
 	let the_id = $(this).attr('href');
 	$('html, body').animate({
@@ -22,7 +24,7 @@ $('a[href^="#"]').click(function(){
 	return false;
 });
 
-/////////HOMEPAGE///////////////////////////////
+/////////HOMEPAGEMOBILE////////////////////////
 
 if ($('#homepage').height() < window.innerHeight ) {
   let dif = window.innerHeight - $('#homepage').height();
@@ -68,7 +70,7 @@ $('#medias img.left-button').css({
   'display': countClickMedias == 0 ? 'none' : 'inherit'
 });
 
-/////////H3///////////////////////////////
+/////////H3ORNEMENTS//////////////////////////
 
 function h3Ornements() {
   const h3s = [
@@ -76,6 +78,7 @@ function h3Ornements() {
     '#h3-carte',
     '#h3-team'
   ];
+  const width = window.innerWidth;
   h3s.forEach( e => {
     $(e).css({
       'margin-left': ( width - $(e + ' .container-h3-ornement').width()) / 2
@@ -84,7 +87,7 @@ function h3Ornements() {
 }
 h3Ornements();
 
-/////////PARALLAX///////////////////////////////
+/////////PARALLAXVIDEO/////////////////////////
 
 window.addEventListener('scroll', () => {
   let scroll = $(document).scrollTop();
