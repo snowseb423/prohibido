@@ -70,7 +70,7 @@ $('#medias img.left-button').css({
 
 /////////H3///////////////////////////////
 
-const h3Ornements = () => {
+function h3Ornements() {
   const h3s = [
     '#h3-information',
     '#h3-carte',
@@ -81,7 +81,7 @@ const h3Ornements = () => {
       'margin-left': ( width - $(e + ' .container-h3-ornement').width()) / 2
     });
   });
-};
+}
 h3Ornements();
 
 /////////PARALLAX///////////////////////////////
