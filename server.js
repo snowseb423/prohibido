@@ -4,6 +4,14 @@ const	bodyParser = require('body-parser');
 const redis = require('redis');
 const client = redis.createClient();
 const validator = require('email-validator');
+const sendmail = require('gmail-send');
+const fs = require('fs');
+
+const email = {
+	user: fs.readFileSync('mail/.user', 'UTF-8'),
+	pass: fs.readFileSync('mail/.pass', 'UTF-8'),
+	subscribe: fs.readFileSync('mail/.subscribe', 'UTF-8')
+};
 
 ////////////CONFSERVER//////////////////////////
 
@@ -66,6 +74,9 @@ app.get('/logout',(req, res) => {
 			res.redirect('/login');
 	});
 });
+
+//////////////////AJAXREQUEST//////////////
+
 app.post('/registration', (req, res) => {
 	let mail = req.body.mail;
 	if (validator.validate(mail)) {
@@ -73,16 +84,35 @@ app.post('/registration', (req, res) => {
 			if (result.indexOf(mail) == -1)
 				client.lpush('mails', mail);
 		});
+		sendmail({
+			user: email.user,
+			pass: email.pass,
+			to: req.body.mail,
+			subject: mail.objet,
+			html: mail.subscribe
+		})();
 		res.end('done');
 	} else {
 		res.end('false');
 	}
 });
+
 app.post('/sendmail', (req, res) => {
 	let mail = req.body;
-	console.log(mail);
+	sendmail({
+		user: email.user,
+		pass: email.pass,
+		to: email.user,
+		subject: mail.objet,
+		html: '<br/><b>Email : </b>' + mail.email +
+					'<br/><b>Tel : </b>' + mail.tel +
+					'<br/><b>Date : </b>' + mail.date +
+					'<br/><b>Nombre : </b>' + mail.nombre +
+					'<br/><b>Message :</b><br/>' + mail.message
+	})();
 	res.end('done');
 });
+
 app.post('/users', (req, res) => {
 	client.lrange('mails', 0, -1, (err, result) => { res.end(JSON.stringify(result)); });
 });
